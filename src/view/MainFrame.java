@@ -43,11 +43,13 @@ public class MainFrame extends JFrame implements Initialize{
 	}
 	
 	public void organizeFrame(){
+		toolbar = new Toolbar();
 		setTitle("Moja aplikacija");
 		setSize(new Dimension(800,800));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
 		setLayout(new BorderLayout());
+		getContentPane().add(toolbar, BorderLayout.WEST);
 	}
 	
 	public LoginPanel getLoginPanel() {

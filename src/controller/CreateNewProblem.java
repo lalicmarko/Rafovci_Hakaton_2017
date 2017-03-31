@@ -6,7 +6,7 @@ import javax.swing.AbstractAction;
 
 import view.NewProblemWindow;
 
-public class CreateNewProblem extends AbstractAction{
+public class CreateNewProblem extends AbstractActionEditor{
 
 	
 	
