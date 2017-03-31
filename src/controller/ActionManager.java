@@ -4,6 +4,7 @@ public class ActionManager {
 
 	private ViewProblemsFeed viewProblemsAction;
 	private VoteAction voteAction;
+	private RegisterChildAction registerChildAction;
 	
 	
 	public ActionManager()  {
@@ -14,6 +15,7 @@ public class ActionManager {
 		
 		viewProblemsAction = new ViewProblemsFeed();
 		voteAction = new VoteAction();
+		registerChildAction = new RegisterChildAction();
 	}
 	
 	
