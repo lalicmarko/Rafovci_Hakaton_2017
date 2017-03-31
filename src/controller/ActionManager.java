@@ -5,6 +5,7 @@ public class ActionManager {
 	private ViewProblemsFeed viewProblemsAction;
 	private VoteAction voteAction;
 	private RegisterChildAction registerChildAction;
+	private CreateNewProblem createNewProblem;
 	private static ActionManager instance = null;
 	
 	private ActionManager()  {
@@ -16,6 +17,7 @@ public class ActionManager {
 		viewProblemsAction = new ViewProblemsFeed();
 		voteAction = new VoteAction();
 		registerChildAction = new RegisterChildAction();
+		createNewProblem = new CreateNewProblem();
 	}
 	public static ActionManager getInstance(){
 		if(instance == null){
@@ -35,5 +37,7 @@ public class ActionManager {
 	public VoteAction getVoteAction() {
 		return voteAction;
 	}
-	
+	public CreateNewProblem getCreateNewProblem() {
+		return createNewProblem;
+	}
 }
