@@ -11,7 +11,7 @@ public class MainFrame extends JFrame implements Initialize{
 
 	private Toolbar toolbar;
 	private static MainFrame instance = null;
-	
+	private LoginPanel loginPanel;
 	private MainFrame(){
 		initialize();
 	}
@@ -32,15 +32,25 @@ public class MainFrame extends JFrame implements Initialize{
 	}
 	@Override
 	public void initialize() {
+		loginPanel = new LoginPanel();
+		organizeFrame();
 		addingOnComponent();
-		
 	}
 	@Override
 	public void addingOnComponent() {
+		add(loginPanel,BorderLayout.CENTER);
+		
+	}
+	
+	public void organizeFrame(){
 		setTitle("jajaja");
 		setSize(new Dimension(800,800));
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
 		setLayout(new BorderLayout());
-		
+	}
+	
+	public LoginPanel getLoginPanel() {
+		return loginPanel;
 	}
 }
