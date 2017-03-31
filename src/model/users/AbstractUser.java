@@ -24,7 +24,7 @@ public abstract class AbstractUser implements Comparable<AbstractUser>, Serializ
 	private boolean createLocation;
 	private boolean donate;
 	private boolean createRedAlertProblem;
-//	private boolean 
+	
 	
 	public AbstractUser(String username, String password, String name, String surname, String email){
 		

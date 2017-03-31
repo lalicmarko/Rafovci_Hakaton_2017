@@ -1,5 +1,9 @@
 package model;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 import model.users.AbstractUser;
@@ -27,53 +31,103 @@ public class UserManager {
 	
 	public void addUser(String username, String password){
 		
-		for (AbstractUser u : users){
-			if (u.getUsername().equals(username)){
-				System.err.println("User already exists");
-			}
+		if (containsUser(username)){
+			System.err.println("User already exists");
+			return;
 		}
 		users.add(new User(username, password));
+	}
+	
+	public ArrayList<AbstractUser> getTopUsers(int nrOfUsers){
+		
+		ArrayList<AbstractUser> list = new ArrayList<AbstractUser>();
+		
+		for (int i = 0; i < nrOfUsers; i++){
+			list.add(users.get(i));
+		}
+		
+		return list;
 		
 	}
 	
 	public AbstractUser getUser(String username){
-		for (AbstractUser u : users){
-			
-			if (u.getUsername().equals(username)){
-				return u;
-			}
-			
-		}
-		System.err.println("Nepostojeci korisnik");
-		return null;
+		return findUser(username);
 	}
 	
 	public void upvoteUser(String username){
-		
-		for (AbstractUser u : users){
-			if (u.getUsername().equals(username)){
-				u.upvote();
-			}
-		}
-		
+		findUser(username).upvote();
 	}
 	
 	public void downvoteUser(String username){
-		
-		for (AbstractUser u : users){
-			if (u.getUsername().equals(username)){
-				u.downvote();
-			}
-		}
-		
+		findUser(username).downvote();
 	}
 	
 	public ArrayList<AbstractUser> getUsers() {
 		return users;
 	}
 	
-	public void saveUsers(){
-//		users.
+	public void saveUsers(String path){
+		
+		try {
+			FileOutputStream fOut = new FileOutputStream(path);
+			ObjectOutputStream oOut = new ObjectOutputStream(fOut);
+			oOut.writeObject(users);	
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public void loadUsers(String path){
+		
+		try {
+			FileInputStream fIn = new FileInputStream(path);
+			ObjectInputStream oIn = new ObjectInputStream(fIn);
+			users = (ArrayList<AbstractUser>)oIn.readObject();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	private AbstractUser findUser(String username){
+		for (AbstractUser u : users){
+			if (u.getUsername().equals(username)){
+				return u;
+			}
+		}
+		System.err.println("Nepostojeci korisnik");
+		return null;
+	}
+	
+	private boolean containsUser(String username){
+		
+		for (AbstractUser u : users){
+			if (u.getUsername().equals(username)){
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public void registerUser(String username, String password, String name, String surname, String email){
+		
+		if (containsUser(username)) {
+			System.err.println("User already registered");
+			return;
+		}
+		users.add(new User(username, password, name, surname, email));
+		
+	}
+	
+	public void printAllUsers(){
+		
+		for (AbstractUser u : users){
+			System.out.println(u.toString());
+		}
+		
 	}
 	
 }
