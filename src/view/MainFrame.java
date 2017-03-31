@@ -50,6 +50,7 @@ public class MainFrame extends JFrame implements Initialize {
 	public void organizeFrame() {
 		setTitle("Moja aplikacija");
 		toolbar = new Toolbar();
+		toolbar.setFloatable(false);
 		setSize(new Dimension(800, 800));
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
