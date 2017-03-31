@@ -3,7 +3,6 @@ package model;
 import java.util.ArrayList;
 
 import model.areas.Area;
-import model.users.AbstractUser;
 
 public class AreaManager {
 
@@ -24,8 +23,20 @@ private ArrayList<Area> areas;
 		return instance;
 	}
 	
+	public void addArea(String title){
+		
+	}
+	
+	private boolean containsArea(String title){
+		for (Area a : areas){
+			if (title.equals(a.getTitle())){
+				return true;
+			}			
+		}
+		return false;
+	}
+	
 	public ArrayList<Area> getAreas() {
 		return areas;
 	}
-	//asdasdasd
 }
