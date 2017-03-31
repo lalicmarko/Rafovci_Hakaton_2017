@@ -20,6 +20,7 @@ public class MainFrame extends JFrame {
 		setLayout(new BorderLayout());
 		setVisible(true);
 	}
+	
 	public static MainFrame getInstance(){
 		if(instance == null){
 			instance = new MainFrame();

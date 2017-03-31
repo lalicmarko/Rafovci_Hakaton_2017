@@ -6,4 +6,15 @@ public class ActionManager {
 	private VoteAction voteAction;
 	
 	
+	public ActionManager()  {
+	   	initialiseActions();
+	   }
+	
+	private void initialiseActions(){
+		
+		viewProblemsAction = new ViewProblemsFeed();
+		voteAction = new VoteAction();
+	}
+	
+	
 }
