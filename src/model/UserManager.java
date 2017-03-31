@@ -9,7 +9,7 @@ public class UserManager {
 	
 	private ArrayList<AbstractUser> users;
 	
-	private UserManager instance;
+	private static UserManager instance;
 	
 	private UserManager(){
 		users = new ArrayList<AbstractUser>();
