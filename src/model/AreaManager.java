@@ -29,7 +29,11 @@ private ArrayList<Area> areas;
 	}
 	
 	public void addArea(String title){
-		
+		if (containsArea(title)){
+			System.err.println("Vec sadrzi oblast");
+			return;
+		}
+		areas.add(new Area(title));
 	}
 	
 	private boolean containsArea(String title){
@@ -45,10 +49,10 @@ private ArrayList<Area> areas;
 		return areas;
 	}
 	
-public void saveArea(String path){
+	public void saveAreas(){
 		
 		try {
-			FileOutputStream fOut = new FileOutputStream(path);
+			FileOutputStream fOut = new FileOutputStream("res/areas.ser");
 			ObjectOutputStream oOut = new ObjectOutputStream(fOut);
 			oOut.writeObject(areas);	
 			
@@ -58,10 +62,10 @@ public void saveArea(String path){
 		
 	}
 	
-	public void loadArea(String path){
+	public void loadAreas(){
 		
 		try {
-			FileInputStream fIn = new FileInputStream(path);
+			FileInputStream fIn = new FileInputStream("res/areas.ser");
 			ObjectInputStream oIn = new ObjectInputStream(fIn);
 			areas = (ArrayList<Area>)oIn.readObject();
 			
@@ -69,5 +73,11 @@ public void saveArea(String path){
 			e.printStackTrace();
 		}
 		
+	}
+	
+	public void printAllAreas(){
+		for (Area a : areas){
+			System.out.println(a.toString());
+		}
 	}
 }

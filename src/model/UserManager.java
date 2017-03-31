@@ -66,10 +66,10 @@ public class UserManager {
 		return users;
 	}
 	
-	public void saveUsers(String path){
+	public void saveUsers(){
 		
 		try {
-			FileOutputStream fOut = new FileOutputStream(path);
+			FileOutputStream fOut = new FileOutputStream("res/users.ser");
 			ObjectOutputStream oOut = new ObjectOutputStream(fOut);
 			oOut.writeObject(users);	
 			
@@ -79,10 +79,10 @@ public class UserManager {
 		
 	}
 	
-	public void loadUsers(String path){
+	public void loadUsers(){
 		
 		try {
-			FileInputStream fIn = new FileInputStream(path);
+			FileInputStream fIn = new FileInputStream("res/users.ser");
 			ObjectInputStream oIn = new ObjectInputStream(fIn);
 			users = (ArrayList<AbstractUser>)oIn.readObject();
 			
