@@ -43,7 +43,7 @@ public class MainFrame extends JFrame implements Initialize{
 	}
 	
 	public void organizeFrame(){
-		setTitle("jajaja");
+		setTitle("jatrrrra");
 		setSize(new Dimension(800,800));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
