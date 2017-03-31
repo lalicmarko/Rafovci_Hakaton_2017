@@ -37,7 +37,7 @@ public class MainFrame extends JFrame implements Initialize{
 	}
 	@Override
 	public void addingOnComponent() {
-		setTitle("Greenify");
+		setTitle("jajaja");
 		setSize(new Dimension(800,800));
 		setLocationRelativeTo(null);
 		setLayout(new BorderLayout());
