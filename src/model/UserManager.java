@@ -15,7 +15,7 @@ public class UserManager {
 		users = new ArrayList<AbstractUser>();
 	}
 	
-	public UserManager getInstance() {
+	public static UserManager getInstance() {
 		
 		if(instance == null){
 			instance = new UserManager();
@@ -23,6 +23,7 @@ public class UserManager {
 		
 		return instance;
 	}
+	
 	
 	public void addUser(String username, String password){
 		
@@ -47,4 +48,33 @@ public class UserManager {
 		return null;
 	}
 	
+	public void upvoteUser(String username){
+		
+		for (AbstractUser u : users){
+			if (u.getUsername().equals(username)){
+				u.upvote();
+			}
+		}
+		
+	}
+	
+	public void downvoteUser(String username){
+		
+		for (AbstractUser u : users){
+			if (u.getUsername().equals(username)){
+				u.downvote();
+			}
+		}
+		
+	}
+	
+	public ArrayList<AbstractUser> getUsers() {
+		return users;
+	}
+	
+	public void saveUsers(){
+//		users.
+	}
+	
 }
+
