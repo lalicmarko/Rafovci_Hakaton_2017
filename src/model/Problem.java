@@ -1,18 +1,19 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Problem {
 
 	private String problemTitle;
 	private String problemDescription;
-	private String imageLocation;
+	private ArrayList<String> imageLocations;
 	private int vote;
 	private boolean donationsApproved;
 	private double donationsMeter;
 	
-	public Problem(String title, String desc, String imgLoc, int vote, boolean bool){
+	public Problem(String title, String desc, int vote, boolean bool){
 		this.problemTitle = title;
 		this.problemDescription = desc;
-		this.imageLocation = imgLoc;
 		this.vote = vote;
 		this.donationsApproved = bool;
 	}
@@ -21,11 +22,11 @@ public class Problem {
 	}
 	
 	
-	public String getImageLocation() {
-		return imageLocation;
+	public ArrayList<String> getImageLocations() {
+		return imageLocations;
 	}
-	public void setImageLocation(String imageLocation) {
-		this.imageLocation = imageLocation;
+	public void setImageLocations(ArrayList<String> imageLocations) {
+		this.imageLocations = imageLocations;
 	}
 	public String getProblemDescription() {
 		return problemDescription;

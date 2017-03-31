@@ -5,9 +5,9 @@ public class ActionManager {
 	private ViewProblemsFeed viewProblemsAction;
 	private VoteAction voteAction;
 	private RegisterChildAction registerChildAction;
+	private static ActionManager instance = null;
 	
-	
-	public ActionManager()  {
+	private ActionManager()  {
 	   	initialiseActions();
 	   }
 	
@@ -17,6 +17,23 @@ public class ActionManager {
 		voteAction = new VoteAction();
 		registerChildAction = new RegisterChildAction();
 	}
+	public static ActionManager getInstance(){
+		if(instance == null){
+			instance = new ActionManager();
+			instance.initialiseActions();
+		}
+		return instance;
+	}
 	
+	
+	public RegisterChildAction getRegisterChildAction() {
+		return registerChildAction;
+	}
+	public ViewProblemsFeed getViewProblemsAction() {
+		return viewProblemsAction;
+	}
+	public VoteAction getVoteAction() {
+		return voteAction;
+	}
 	
 }

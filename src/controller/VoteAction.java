@@ -2,10 +2,12 @@ package controller;
 
 import java.awt.event.ActionEvent;
 
-public class VoteAction {
+import javax.swing.AbstractAction;
 
+public class VoteAction extends AbstractAction{
+ 
 	
-	public void actionPerformed(ActionEvent arg){
+public void actionPerformed(ActionEvent arg){
 		
 		
 	}
