@@ -15,9 +15,5 @@ public class Main {
 //		mainFrame.setVisible(true);
 		
 		
-		UserManager m = UserManager.getInstance();
-		
-		m.loadUsers("D:/test/korisnici.ser");
-		m.printAllUsers();
 	}
 }

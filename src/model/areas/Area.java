@@ -1,6 +1,8 @@
 package model.areas;
 
-public class Area {
+import java.io.Serializable;
+
+public class Area implements Serializable {
 	
 	private String title;
 	
