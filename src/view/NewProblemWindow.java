@@ -7,20 +7,18 @@ import javax.swing.JFrame;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+import net.miginfocom.swing.MigLayout;
+
 public class NewProblemWindow extends JFrame{
 
 	private JTextField problemTitle;
 	private JTextArea problemDescription;
 	private JTextField problemImgLocation;
 	private JButton loadImageLoaction;
-	private JTextField textField;
 	
 	public NewProblemWindow(){
 		setTitle("Add new problem");
-		getContentPane().setLayout(new BorderLayout(0, 0));
-		textField = new JTextField();
-		getContentPane().add(textField, BorderLayout.NORTH);
-		textField.setColumns(10);
+		getContentPane().setLayout(new MigLayout("", "[][grow][]", "[][][]"));
 		
 	}
 }
