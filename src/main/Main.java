@@ -8,16 +8,10 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-//		MainFrame mainFrame = MainFrame.getInstance();
-//		
-//		NewProblemWindow npw = new NewProblemWindow();
-//		npw.setVisible(true);
-//		mainFrame.setVisible(true);
+		MainFrame mainFrame = MainFrame.getInstance();
 		
-		
-		UserManager m = UserManager.getInstance();
-		
-		m.loadUsers("D:/test/korisnici.ser");
-		m.printAllUsers();
+		NewProblemWindow npw = new NewProblemWindow();
+		npw.setVisible(true);
+		mainFrame.setVisible(true);
 	}
 }

@@ -1,0 +1,5 @@
+bin/controller/
+bin/main/
+bin/model/
+/view/
+/.classpath
