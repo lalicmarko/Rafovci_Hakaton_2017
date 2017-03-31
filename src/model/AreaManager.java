@@ -27,5 +27,5 @@ private ArrayList<Area> areas;
 	public ArrayList<Area> getAreas() {
 		return areas;
 	}
-	
+	//asdasdasd
 }
