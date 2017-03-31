@@ -10,7 +10,8 @@ public class Main {
 		
 		MainFrame mainFrame = MainFrame.getInstance();
 		
+		NewProblemWindow npw = new NewProblemWindow();
+		npw.setVisible(true);
 		mainFrame.setVisible(true);
-		
 	}
 }
