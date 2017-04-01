@@ -12,11 +12,13 @@ import model.users.User;
 public class UserManager {
 	
 	private ArrayList<AbstractUser> users;
+	private AbstractUser currUser;
 	
 	private static UserManager instance;
 	
 	private UserManager(){
 		users = new ArrayList<AbstractUser>();
+		currUser = null;
 	}
 	
 	public static UserManager getInstance() {
@@ -47,6 +49,20 @@ public class UserManager {
 		}
 		
 		return list;
+		
+	}
+	
+	public void logInUser(String username, String password){
+		
+		if (!containsUser(username)){
+			System.err.println("Korisnik ne postoji!");
+			return;
+		}
+		if (findUser(username).verify(password)) {
+			
+			currUser = findUser(username);
+			System.out.println("Ulogovan je korisnik: "+ username);
+		}
 		
 	}
 	
@@ -120,6 +136,14 @@ public class UserManager {
 		}
 		users.add(new User(username, password, name, surname, email));
 		
+	}
+	
+	public AbstractUser getCurrUser() {
+		if (currUser == null){
+			System.err.println("Nema ulogovanog korisnika");
+			return null;
+		}
+		return currUser;
 	}
 	
 	public void printAllUsers(){
