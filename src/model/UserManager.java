@@ -63,6 +63,11 @@ public class UserManager {
 			currUser = findUser(username);
 			System.out.println("Ulogovan je korisnik: "+ username);
 		}
+		else {
+			
+			System.out.println("Pogresna lozinka");
+			
+		}
 		
 	}
 	
