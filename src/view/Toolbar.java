@@ -17,10 +17,12 @@ public class Toolbar extends JToolBar {
 	
 	public Toolbar(){
 		super();
+		setOrientation(VERTICAL);
 		add(ActionManager.getInstance().getViewProblemsAction());
 		addSeparator(new Dimension(15, 30));
 		add(ActionManager.getInstance().getRegisterChildAction());
 		addSeparator(new Dimension(15, 30));
+		add(ActionManager.getInstance().getCreateNewProblem());
 		
 		
 		
