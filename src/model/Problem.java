@@ -17,6 +17,7 @@ public class Problem {
 		this.vote = vote;
 		this.donationsApproved = bool;
 	}
+	
 	public Problem(){
 		
 	}

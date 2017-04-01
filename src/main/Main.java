@@ -12,17 +12,10 @@ public class Main {
 		UserManager.getInstance().loadUsers();
 		AreaManager.getInstance().loadAreas();
 		
-		UserManager m = UserManager.getInstance();
-//		MainFrame mainFrame = MainFrame.getInstance();
-//		
-//		NewProblemWindow npw = new NewProblemWindow();
-//		npw.setVisible(true);
-//		mainFrame.setVisible(true);
+		MainFrame mainFrame = MainFrame.getInstance();
 		
-		m.printAllUsers();
-		
-		m.logInUser("Maza", "123");
-		
-		System.out.println(m.getCurrUser().isCreateLocation());
+		NewProblemWindow npw = new NewProblemWindow();
+		npw.setVisible(true);
+		mainFrame.setVisible(true);
 	}
 }
