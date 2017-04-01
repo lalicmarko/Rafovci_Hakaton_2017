@@ -14,6 +14,7 @@ public class MainFrame extends JFrame implements Initialize {
 	private static MainFrame instance = null;
 	private LoginPanel loginPanel;
 	private RightScrollPane rightScrollPane;
+	private NewProblemWindow newProblemWindow;
 
 	private MainFrame() {
 	}
@@ -35,6 +36,7 @@ public class MainFrame extends JFrame implements Initialize {
 
 	@Override
 	public void initialize() {
+		newProblemWindow = new NewProblemWindow();
 		panelContainers = new PanelContainers();
 		rightScrollPane = new RightScrollPane();
 		organizeFrame();
@@ -66,5 +68,8 @@ public class MainFrame extends JFrame implements Initialize {
 
 	public RightScrollPane getRightScrollPane() {
 		return rightScrollPane;
+	}
+	public NewProblemWindow getNewProblemWindow() {
+		return newProblemWindow;
 	}
 }

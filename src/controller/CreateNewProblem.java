@@ -4,6 +4,8 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
 
+import model.ProblemManager;
+import view.MainFrame;
 import view.NewProblemWindow;
 
 public class CreateNewProblem extends AbstractActionEditor{
@@ -16,7 +18,8 @@ public class CreateNewProblem extends AbstractActionEditor{
 	
 	public void actionPerformed(ActionEvent arg){
 		
-		NewProblemWindow newProblemWindow = new NewProblemWindow();
+		
+		NewProblemWindow newProblemWindow = MainFrame.getInstance().getNewProblemWindow();
 		newProblemWindow.setVisible(true);
 	}
 }

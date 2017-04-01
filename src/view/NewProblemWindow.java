@@ -5,7 +5,7 @@ import java.awt.Dimension;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
-import javax.swing.JFrame;
+import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 import javax.swing.JSeparator;
@@ -15,7 +15,7 @@ import javax.swing.JTextPane;
 
 import net.miginfocom.swing.MigLayout;
 
-public class NewProblemWindow extends JFrame{
+public class NewProblemWindow extends JDialog{
 
 	private JTextField problemTitleTf;
 	private JTextArea problemDescriptionTa;
@@ -40,16 +40,13 @@ public class NewProblemWindow extends JFrame{
 	public NewProblemWindow(){
 		
 		initialiseGui();
-		
-	
-		
-		
-		
 	}
 	public void initialiseGui(){
 		setTitle("Add new problem");
 		setSize(new Dimension(600,600));
+		setModal(true);
 		setLocationRelativeTo(null);
+		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		getContentPane().setLayout(new MigLayout("", "[31.00][86.00][123.00][366.00][][94.00]", "[][][][20.00][][][][][][72.00][][][184.00][92.00][87.00]"));
 	
 		JLabel labelProblemTitle = new JLabel("Problem titile:");
@@ -114,4 +111,63 @@ public class NewProblemWindow extends JFrame{
 		getContentPane().add(rbNotAlert, "flowx,cell 3 8,alignx left");
 		getContentPane().add(btnSave, "cell 5 14");
 	}
+	public JTextField getProblemTitleTf() {
+		return problemTitleTf;
+	}
+	public JTextArea getProblemDescriptionTa() {
+		return problemDescriptionTa;
+	}
+	public JTextField getProblemImgLocationTf() {
+		return problemImgLocationTf;
+	}
+	public JButton getLoadImageLoactionBtn() {
+		return loadImageLoactionBtn;
+	}
+	public JRadioButton getRbRequired() {
+		return rbRequired;
+	}
+	public JRadioButton getRbNotRequired() {
+		return rbNotRequired;
+	}
+	public JRadioButton getRbAlert() {
+		return rbAlert;
+	}
+	public JRadioButton getRbNotAlert() {
+		return rbNotAlert;
+	}
+	public JLabel getImageLocation() {
+		return imageLocation;
+	}
+	public ButtonGroup getButtonDonationsGroup() {
+		return buttonDonationsGroup;
+	}
+	public ButtonGroup getButtonRedAlertGroup() {
+		return buttonRedAlertGroup;
+	}
+	public JLabel getLblRedAlert() {
+		return lblRedAlert;
+	}
+	public JRadioButton getRdbtnNewRadioButton() {
+		return rdbtnNewRadioButton;
+	}
+	public JRadioButton getRdbtnNewRadioButton_1() {
+		return rdbtnNewRadioButton_1;
+	}
+	public JSeparator getSeparator() {
+		return separator;
+	}
+	public JSeparator getSeparator_1() {
+		return separator_1;
+	}
+	public JSeparator getSeparator_2() {
+		return separator_2;
+	}
+	public JButton getSaveButton() {
+		return saveButton;
+	}
+	public JButton getBtnSave() {
+		return btnSave;
+	}
+	
+
 }
